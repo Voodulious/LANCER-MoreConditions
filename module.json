@@ -14,6 +14,6 @@
     "name": "James Everitt"
   }],
   "url": "https://github.com/Voodulious/LANCER-MoreConditions",
-  "manifest": "https://raw.githubusercontent.com/Voodulious/LANCER-MoreConditions/main/module.json",
-  "download": "https://github.com/Voodulious/LANCER-MoreConditions/archive/refs/tags/v1.0.0.zip"
+  "manifest": "https://raw.githubusercontent.com/Voodulious/LANCER-MoreConditions/v0.2/module.json",
+  "download": "https://github.com/Voodulious/LANCER-MoreConditions/releases/download/v0.2/LANCER-MoreConditions.zip"
 }
