@@ -1,0 +1,19 @@
+{
+  "id": "LANCER-MoreConditions",
+  "title": "LANCER-MoreConditions + VFX",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "esmodules": [
+    "scripts/register-effects.js",
+    "scripts/apply-vfx.js"
+  ],
+  "authors": [{
+    "name": "James Everitt"
+  }],
+  "url": "https://github.com/Voodulious/LANCER-MoreConditions.git",
+  "manifest": "https://github.com/Voodulious/LANCER-MoreConditions.git/raw/main/module.json",
+  "download": "https://github.com/Voodulious/LANCER-MoreConditions.git/archive/refs/heads/main.zip"
+}
