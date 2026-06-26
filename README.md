@@ -1,6 +1,7 @@
 # LANCER-MoreConditions (currently for version 12)
 Adding more conditions and vfx to the foundry lancer game system '[foundryvtt-lancer](https://github.com/Eranziel/foundryvtt-lancer)'
 
+<pre>
 LANCER-MoreConditions/
 │
 ├─ readme.md
@@ -18,6 +19,7 @@ LANCER-MoreConditions/
     ├─ jb2a-vfx.js
     ├─ tokenmagic-vfx.js
     └─ apply-vfx.js
+</pre>
 
 Dependencies:
 https://foundryvtt.com/packages/tokenmagic
