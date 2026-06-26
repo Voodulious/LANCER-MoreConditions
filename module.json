@@ -8,10 +8,11 @@
   },
   "esmodules": [
     "scripts/register-effects.js",
-    "scripts/apply-vfx.js"
+    "scripts/apply-vfx.js",
+	"scripts/isGrappled.js"
   ],
   "authors": [{
-    "name": "James Everitt"
+    "name": "Voodulious"
   }],
   "url": "https://github.com/Voodulious/LANCER-MoreConditions",
   "manifest": "https://github.com/Voodulious/LANCER-MoreConditions/releases/latest/download/module.json",

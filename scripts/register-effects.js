@@ -1,16 +1,22 @@
-Hooks.once("init", () => {
-  const newEffects = [
+Hooks.on("ready", () => {
+  const customEffects = [
     {
       id: "lmc-test",
-      label: "Test Condition",
-      icon: "modules/LANCER-MoreConditions/icons/test.svg"
+      name: "Test",
+      img: "modules/LANCER-MoreConditions/icons/test.svg"
     },
     {
-      id: "my-other-condition",
-      label: "My Other Condition",
-      icon: "modules/LANCER-MoreConditions/icons/my_condition_2.svg"
+      id: "imc-nano-repair-cloud",
+      name: "Nano-Repair-Cloud",
+      img: "modules/LANCER-MoreConditions/icons/Nano-Repair-Cloud.svg"
     }
   ];
 
-  CONFIG.statusEffects.push(...newEffects);
+  // Merge your effects with the existing LANCER ones
+  CONFIG.statusEffects = [
+    ...CONFIG.statusEffects,
+    ...customEffects
+  ];
+
+  console.log("LMC: Custom conditions registered", CONFIG.statusEffects);
 });
