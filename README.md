@@ -21,7 +21,9 @@ LANCER-MoreConditions/
     └─ apply-vfx.js
 </pre>
 
+<pre>
 Dependencies:
 https://foundryvtt.com/packages/tokenmagic
 https://foundryvtt.com/packages/JB2A_DnD5e (patreon pack aswell https://www.patreon.com/JB2A)
 https://github.com/Eranziel/foundryvtt-lancer
+</pre>
