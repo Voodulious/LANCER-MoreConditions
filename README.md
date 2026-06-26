@@ -1,5 +1,5 @@
 # LANCER-MoreConditions (currently for version 12)
-Adding more conditions and vfx to the lancer game system using '[CSM Lancer QoL](https://gitlab.com/csmcfarland/csm-lancer-qol)' and '[foundryvtt-lancer](https://github.com/Eranziel/foundryvtt-lancer)'
+Adding more conditions and vfx to the foundry lancer game system '[foundryvtt-lancer](https://github.com/Eranziel/foundryvtt-lancer)'
 
 LANCER-MoreConditions/
 │
