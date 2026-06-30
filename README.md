@@ -3,6 +3,10 @@ Adding more conditions and matching vfx to the '[foundryvtt-lancer](https://gith
 <pre>
 (More to be added in future)
 Examples/Work in progress:
+
+
+
+    
 </pre>
 
 <img width="560" height="240" alt="CoreBatteryActive" src="https://github.com/user-attachments/assets/a73de5d6-0bd0-4aa8-b3dd-5daf04c17656" />
