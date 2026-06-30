@@ -4,7 +4,7 @@ export const jb2aVFX = {
 
   "resistance_heat": {
     apply: async (token) => {
-      const effectName = `lmc-resist-heat-${token.id}`;
+      const effectName = `imc-resist-heat-${token.id}`;
 
       new Sequence()
         .effect()
@@ -18,20 +18,20 @@ export const jb2aVFX = {
 		.tint(0xffa82e)
         .play();
 
-      console.log("LMC: Applied resistance_heat VFX");
+      console.log("imc: Applied resistance_heat VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-resist-heat-${token.id}`;
+      const effectName = `imc-resist-heat-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed resistance_heat VFX");
+      console.log("imc: Removed resistance_heat VFX");
     }
   },
 
 //resistance_kinetic
   "resistance_kinetic": {
     apply: async (token) => {
-      const effectName = `lmc-resist-kinetic-${token.id}`;
+      const effectName = `imc-resist-kinetic-${token.id}`;
 
       new Sequence()
         .effect()
@@ -45,20 +45,20 @@ export const jb2aVFX = {
 		.tint(0x6b6565)
         .play();
 
-      console.log("LMC: Applied resistance_kinetic VFX");
+      console.log("imc: Applied resistance_kinetic VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-resist-kinetic-${token.id}`;
+      const effectName = `imc-resist-kinetic-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed resistance_kinetic VFX");
+      console.log("imc: Removed resistance_kinetic VFX");
     }
   },
   
   //resistance_burn
   "resistance_burn": {
     apply: async (token) => {
-      const effectName = `lmc-resist-burn-${token.id}`;
+      const effectName = `imc-resist-burn-${token.id}`;
 
       new Sequence()
         .effect()
@@ -72,20 +72,20 @@ export const jb2aVFX = {
 		.tint(0xff2a00)
         .play();
 
-      console.log("LMC: Applied resistance_burn VFX");
+      console.log("imc: Applied resistance_burn VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-resist-burn-${token.id}`;
+      const effectName = `imc-resist-burn-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed resistance_burn VFX");
+      console.log("imc: Removed resistance_burn VFX");
     }
   },
   
    //resistance_energy
   "resistance_energy": {
     apply: async (token) => {
-      const effectName = `lmc-resist-energy-${token.id}`;
+      const effectName = `imc-resist-energy-${token.id}`;
 
       new Sequence()
         .effect()
@@ -99,20 +99,20 @@ export const jb2aVFX = {
 		.tint(0x00b7ff)
         .play();
 
-      console.log("LMC: Applied resistance_energy VFX");
+      console.log("imc: Applied resistance_energy VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-resist-energy-${token.id}`;
+      const effectName = `imc-resist-energy-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed resistance_energy VFX");
+      console.log("imc: Removed resistance_energy VFX");
     }
   },
   
      //resistance_explosive
   "resistance_explosive": {
     apply: async (token) => {
-      const effectName = `lmc-resist-explosive-${token.id}`;
+      const effectName = `imc-resist-explosive-${token.id}`;
 
       new Sequence()
         .effect()
@@ -126,26 +126,26 @@ export const jb2aVFX = {
 		.tint(0x00b7ff)
         .play();
 
-      console.log("LMC: Applied resistance_explosive VFX");
+      console.log("imc: Applied resistance_explosive VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-resist-explosive-${token.id}`;
+      const effectName = `imc-resist-explosive-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed resistance_explosive VFX");
+      console.log("imc: Removed resistance_explosive VFX");
     }
   },
   
    //downandout
   "downandout": {
     apply: async (token) => {
-      const effectName = `lmc-downandout-${token.id}`;
+      const effectName = `imc-downandout-${token.id}`;
 
       new Sequence()
         .effect()
         .file("jb2a.sleep.symbol.pink")
         .attachTo(token)
-        .scale(0.4)
+        .scale(0.6)
         .opacity(0.8)
 		.playbackRate(0.8)
         .persist()
@@ -153,13 +153,13 @@ export const jb2aVFX = {
 		.tint(0x6f90ab)
         .play();
 
-      console.log("LMC: Applied downandout VFX");
+      console.log("imc: Applied downandout VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-downandout-${token.id}`;
+      const effectName = `imc-downandout-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed downandout VFX");
+      console.log("imc: Removed downandout VFX");
     }
   },
 
@@ -167,7 +167,7 @@ export const jb2aVFX = {
    //immobilized
   "immobilized": {
     apply: async (token) => {
-      const effectName = `lmc-immobilized-${token.id}`;
+      const effectName = `imc-immobilized-${token.id}`;
 	  
 		const tokenSize = token.w; //token diameter in pixels
 		
@@ -175,25 +175,28 @@ export const jb2aVFX = {
 		
 		const scale = tokenSize / animationSize;
 		
+		const adjustScale = scale * 1.2;
+		
       new Sequence()
         .effect()
         .file("jb2a.markers.chain.spectral_standard.loop")
         .attachTo(token)
-        .scale(scale)
-        .opacity(0.7)
+		.belowTokens()
+        .scale(adjustScale)
+        .opacity(0.5)
 		.playbackRate(0.6)
         .persist()
         .name(effectName)
-		.tint(0x4a4a4a)
+		.tint(0xe3e3e3)
         .play();
 
-      console.log("LMC: Applied immobilized VFX");
+      console.log("imc: Applied immobilized VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-immobilized-${token.id}`;
+      const effectName = `imc-immobilized-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed immobilized VFX");
+      console.log("imc: Removed immobilized VFX");
     }
   },
 
@@ -201,7 +204,7 @@ export const jb2aVFX = {
    //shutdown
   "shutdown": {
     apply: async (token) => {
-      const effectName = `lmc-shutdown-${token.id}`;
+      const effectName = `imc-shutdown-${token.id}`;
 
       new Sequence()
         .effect()
@@ -214,13 +217,13 @@ export const jb2aVFX = {
         .name(effectName)
         .play();
 
-      console.log("LMC: Applied shutdown VFX");
+      console.log("imc: Applied shutdown VFX");
     },
 
     remove: async (token) => {
-      const effectName = `lmc-shutdown-${token.id}`;
+      const effectName = `imc-shutdown-${token.id}`;
       Sequencer.EffectManager.endEffects({ name: effectName });
-      console.log("LMC: Removed shutdown VFX");
+      console.log("imc: Removed shutdown VFX");
 	  
 	    }
   },
@@ -228,35 +231,7 @@ export const jb2aVFX = {
 //lockon
 "lockon": {
   apply: async (token) => {
-    const effectName = `lmc-lockon-${token.id}`;
-
-    new Sequence()
-      .effect()
-        .file("modules/lancer-moreconditions/icons/lockon-rotate/*.png") // ← two versions
-        .attachTo(token)
-		.belowTokens()
-        .scale(0.3)
-        .opacity(0.5)
-        .tint(0x6b0000)
-        .playbackRate(1)       // adjust speed
-        .persist()
-        .name(effectName)
-      .play();
-
-    console.log("LMC: Applied lockon VFX");
-  },
-
-  remove: async (token) => {
-    const effectName = `lmc-lockon-${token.id}`;
-    Sequencer.EffectManager.endEffects({ name: effectName });
-    console.log("LMC: Removed lockon VFX");
-  }
-},
-  
-  //slow
-"slow": {
-  apply: async (token) => {
-    const effectName = `lmc-slow-${token.id}`;
+    const effectName = `imc-lockon-${token.id}`;
 	
 		const tokenSize = token.w; //token diameter in pixels
 		
@@ -264,7 +239,43 @@ export const jb2aVFX = {
 		
 		const scale = tokenSize / animationSize;
 		
-		const adjustScale = scale * 0.5;
+		const adjustScale = scale * 0.8;
+
+    new Sequence()
+      .effect()
+        .file("modules/lancer-moreconditions/icons/lockon-rotate/*.png") // ← two versions
+        .attachTo(token)
+		.belowTokens()
+        .scale(adjustScale)
+        .opacity(0.4)
+        .tint(0x6b0000)
+        .playbackRate(1)       // adjust speed
+        .persist()
+        .name(effectName)
+      .play();
+
+    console.log("imc: Applied lockon VFX");
+  },
+
+  remove: async (token) => {
+    const effectName = `imc-lockon-${token.id}`;
+    Sequencer.EffectManager.endEffects({ name: effectName });
+    console.log("imc: Removed lockon VFX");
+  }
+},
+  
+  //slow
+"slow": {
+  apply: async (token) => {
+    const effectName = `imc-slow-${token.id}`;
+	
+		const tokenSize = token.w; //token diameter in pixels
+		
+		const animationSize = 200; //jb2a size of animation
+		
+		const scale = tokenSize / animationSize;
+		
+		const adjustScale = scale * 0.9;
 		
     new Sequence()
       .effect()
@@ -279,20 +290,20 @@ export const jb2aVFX = {
         .name(effectName)
       .play();
 
-    console.log("LMC: Applied slow VFX");
+    console.log("imc: Applied slow VFX");
   },
 
   remove: async (token) => {
-    const effectName = `lmc-slow-${token.id}`;
+    const effectName = `imc-slow-${token.id}`;
     Sequencer.EffectManager.endEffects({ name: effectName });
-    console.log("LMC: Removed slow VFX");
+    console.log("imc: Removed slow VFX");
   }
 },
   
     //stunned
 "stunned": {
   apply: async (token) => {
-    const effectName = `lmc-stunned-${token.id}`;
+    const effectName = `imc-stunned-${token.id}`;
 	
 		const tokenSize = token.w; //token diameter in pixels
 		
@@ -300,28 +311,27 @@ export const jb2aVFX = {
 		
 		const scale = tokenSize / animationSize;
 		
-		const adjustScale = scale * 0.8;
+		const adjustScale = scale * 1;
 		
     new Sequence()
       .effect()
         .file("jb2a.particles.swirl.greenyellow.02.01")
         .attachTo(token)
-		.belowTokens()
         .scale(adjustScale)
-        .opacity(0.7)
+        .opacity(0.8)
         .tint(0xffffff)
         .playbackRate(0.6)       // adjust speed
         .persist()
         .name(effectName)
       .play();
 
-    console.log("LMC: Applied stunned VFX");
+    console.log("imc: Applied stunned VFX");
   },
 
   remove: async (token) => {
-    const effectName = `lmc-stunned-${token.id}`;
+    const effectName = `imc-stunned-${token.id}`;
     Sequencer.EffectManager.endEffects({ name: effectName });
-    console.log("LMC: Removed stunned VFX");
+    console.log("imc: Removed stunned VFX");
   }
 },
 
@@ -329,7 +339,7 @@ export const jb2aVFX = {
     //NANO REPAIR CLOUD
 "imc-nano-repair-cloud": {
   apply: async (token) => {
-    const effectName = `lmc-imc-nano-repair-cloud-${token.id}`;
+    const effectName = `imc-nano-repair-cloud-${token.id}`;
 	
 		const tokenSize = token.w; //token diameter in pixels
 		
@@ -337,7 +347,7 @@ export const jb2aVFX = {
 		
 		const scale = tokenSize / animationSize;
 		
-		const adjustScale = scale * 0.8;
+		const adjustScale = scale * 2;
 		
     new Sequence()
       .effect()
@@ -352,14 +362,128 @@ export const jb2aVFX = {
         .name(effectName)
       .play();
 
-    console.log("LMC: Applied imc-nano-repair-cloud VFX");
+    console.log("imc: Applied imc-nano-repair-cloud VFX");
   },
 
   remove: async (token) => {
-    const effectName = `lmc-imc-nano-repair-cloud-${token.id}`;
+    const effectName = `imc-nano-repair-cloud-${token.id}`;
     Sequencer.EffectManager.endEffects({ name: effectName });
-    console.log("LMC: Removed imc-nano-repair-cloud VFX");
+    console.log("imc: Removed imc-nano-repair-cloud VFX");
   }
 },
+
+
+    //CRUSHED TARGETING
+"imc-crush-targeting": {
+  apply: async (token) => {
+    const effectName = `imc-crush-targeting-${token.id}`;
+	
+		const tokenSize = token.w; //token diameter in pixels
+		
+		const animationSize = 200; //jb2a size of animation
+		
+		const scale = tokenSize / animationSize;
+		
+		const adjustScale = scale * 0.7;
+		
+    new Sequence()
+      .effect()
+        .file("jb2a.soundwave.02.blue")
+        .attachTo(token)
+		.belowTokens()
+        .scale(adjustScale)
+        .opacity(0.6)
+        .tint(0xffffff)
+        .playbackRate(0.6)       // adjust speed
+        .persist()
+        .name(effectName)
+      .play();
+
+    console.log("imc: Applied imc-crush-targeting VFX");
+  },
+
+  remove: async (token) => {
+    const effectName = `imc-crush-targeting-${token.id}`;
+    Sequencer.EffectManager.endEffects({ name: effectName });
+    console.log("imc: Removed imc-crush-targeting VFX");
+  }
+},
+
+    //REBOUND SCAN
+"imc-rebound-scan": {
+  apply: async (token) => {
+    const effectName = `imc-rebound-scan-${token.id}`;
+	
+		const tokenSize = token.w; //token diameter in pixels
+		
+		const animationSize = 200; //jb2a size of animation
+		
+		const scale = tokenSize / animationSize;
+		
+		const adjustScale = scale * 0.6;
+		
+    new Sequence()
+      .effect()
+        .file("jb2a.zoning.outward.circle.loop.bluegreen.01.02")
+        .attachTo(token)
+		.belowTokens()
+        .scale(adjustScale)
+        .opacity(0.5)
+        .tint(0xffffff)
+        .playbackRate(0.4)       // adjust speed
+        .persist()
+        .name(effectName)
+      .play();
+
+    console.log("imc: Applied imc-rebound-scan VFX");
+  },
+
+  remove: async (token) => {
+    const effectName = `imc-rebound-scan-${token.id}`;
+    Sequencer.EffectManager.endEffects({ name: effectName });
+    console.log("imc: Removed imc-rebound-scan VFX");
+  }
+},
+
+
+
+    //BLIND
+"imc-blind": {
+  apply: async (token) => {
+    const effectName = `imc-blind-${token.id}`;
+	
+		const tokenSize = token.w; //token diameter in pixels
+		
+		const animationSize = 200; //jb2a size of animation
+		
+		const scale = tokenSize / animationSize;
+		
+		const adjustScale = scale * 0.3;
+		
+		const upDark = tokenSize * 0.1;
+		
+    new Sequence()
+      .effect()
+        .file("jb2a.darkness.black")
+        .attachTo(token)
+		.atLocation({ x: token.center.x, y: token.center.y - upDark })
+        .scale(adjustScale)
+        .opacity(0.9)
+        .tint(0xffffff)
+        .playbackRate(0.6)       // adjust speed
+        .persist()
+        .name(effectName)
+      .play();
+
+    console.log("imc: Applied imc-blind VFX");
+  },
+
+  remove: async (token) => {
+    const effectName = `imc-blind-${token.id}`;
+    Sequencer.EffectManager.endEffects({ name: effectName });
+    console.log("imc: Removed imc-blind VFX");
+  }
+},
+
   // Add more JB2A effects here
 };

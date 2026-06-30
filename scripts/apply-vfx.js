@@ -11,7 +11,7 @@ Hooks.on("createActiveEffect", async (effect, options, userId) => {
   const statusId = [...effect.statuses][0];
   if (!statusId) return;
 
-  console.log("LMC: ActiveEffect created:", statusId);
+  console.log("imc: ActiveEffect created:", statusId);
 
   handleConditionVFX(token, new Set([statusId]), statusId);
 });
@@ -26,7 +26,7 @@ Hooks.on("deleteActiveEffect", async (effect, options, userId) => {
   const statusId = [...effect.statuses][0];
   if (!statusId) return;
 
-  console.log("LMC: ActiveEffect removed:", statusId);
+  console.log("imc: ActiveEffect removed:", statusId);
 
   handleConditionVFX(token, new Set(), statusId);
 });
@@ -36,11 +36,7 @@ Hooks.on("deleteActiveEffect", async (effect, options, userId) => {
 function handleConditionVFX(token, statuses, changedCondition = null) {
 
   const conditions = [
-    "lmc-burning",
-    "lmc-overloaded",
-    "lmc-system-lock",
-    "lmc-emp-shock",
-    "lmc-test",
+    "imc-test",
     "prone",
     "bolster",
     "hidden",
@@ -61,7 +57,15 @@ function handleConditionVFX(token, statuses, changedCondition = null) {
 	"lockon",
 	"slow",
 	"stunned",
-	"imc-nano-repair-cloud"
+	"imc-nano-repair-cloud",
+	"imc-crush-targeting",
+	"imc-rebound-scan",
+	"imc-tear-down",
+	"imc-blind",
+	"imc-leadership-die",
+	"imc-prepare",
+	"core_power_active",
+	"imc-climbing"
 	
   ];
 
@@ -101,26 +105,14 @@ function applyVFX(token, conditionId) {
   // 3. Fallback Sequencer VFX
   if (!appliedSomething) {
 
-    const effectName = `lmc-${conditionId}-${token.id}`;
+    const effectName = `imc-${conditionId}-${token.id}`;
 
     if (Sequencer.EffectManager.getEffects({ name: effectName }).length > 0) return;
 
     let file = null;
 
     switch (conditionId) {
-      case "lmc-burning":
-        file = "jb2a.fire_burst.orange.02";
-        break;
-      case "lmc-overloaded":
-        file = "jb2a.static_electricity.02.blue";
-        break;
-      case "lmc-system-lock":
-        file = "jb2a.energy_strands.purple.01";
-        break;
-      case "lmc-emp-shock":
-        file = "jb2a.shockwave.02.blue";
-        break;
-      case "lmc-test":
+      case "imc-test":
         file = "jb2a.arcane_hand";
         break;
     }
@@ -161,7 +153,7 @@ function removeVFX(token, conditionId) {
 
   // 3. Fallback Sequencer removal
   if (!removedSomething) {
-    const effectName = `lmc-${conditionId}-${token.id}`;
+    const effectName = `imc-${conditionId}-${token.id}`;
     Sequencer.EffectManager.endEffects({ name: effectName });
     console.log("Removing fallback VFX for:", conditionId);
   }
