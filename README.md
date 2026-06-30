@@ -1,5 +1,5 @@
 # LANCER-MoreConditions
-Adding more conditions and matching vfx to the '[foundryvtt-lancer](https://github.com/Eranziel/foundryvtt-lancer)' game system using '[TokenMagic](https://foundryvtt.com/packages/tokenmagic)' and [JB2a](https://foundryvtt.com/packages/JB2A_DnD5e) assets. 
+Adding more conditions and matching vfx to the '[foundryvtt-lancer](https://github.com/Eranziel/foundryvtt-lancer)' game system using '[TokenMagic](https://foundryvtt.com/packages/tokenmagic)' and [JB2a](https://foundryvtt.com/packages/JB2A_DnD5e) assets. (Currently only verified on V12!)
 <pre>
 (More to be added in future)
 Examples/Work in progress:
